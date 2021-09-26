@@ -21,6 +21,7 @@ import styles from "assets/jss/material-kit-react/views/landingPage.js";
 import ProductSection from "./Sections/ProductSection.js";
 import TeamSection from "./Sections/TeamSection.js";
 import WorkSection from "./Sections/WorkSection.js";
+import SectionCarousel from "./Sections/SectionCarousel.js";
 
 const dashboardRoutes = [];
 
@@ -33,7 +34,6 @@ export default function LandingPage(props) {
   const imageClasses = classNames(
     classes.imgFluid
   );
-  console.log(imageClasses)
   const { ...rest } = props;
   return (
     <div>
@@ -54,16 +54,19 @@ export default function LandingPage(props) {
           <GridContainer>
             <GridItem xs={12} sm={12} md={12}>
               <img src={banner} alt="..." className={imageClasses} />
+              <h2 className={classes.subHeader}>The best hotel in town!</h2>
+              <hr className={classes.divider}></hr>
               <h3>
                 Book your rooms now so that you have a hassle free living experience while visiting Chottanikara, Kochi!
               </h3>
               <br />
               <Button
-                color="danger"
+                color="primary"
                 size="lg"
-                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ref=creativetim"
+                href="/book"
                 target="_blank"
                 rel="noopener noreferrer"
+                round
               >
                 Book Now
               </Button>
@@ -75,6 +78,7 @@ export default function LandingPage(props) {
         <div className={classes.container}>
           <ProductSection />
           <TeamSection />
+          <SectionCarousel />
           <WorkSection />
         </div>
       </div>
