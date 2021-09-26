@@ -5,11 +5,20 @@ const landingPageStyle = {
   container: {
     zIndex: "12",
     color: "#FFFFFF",
+    textAlign: "center",
     ...container,
   },
   ...imagesStyle,
   gradient: {
     background: "linear-gradient(rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%)",
+  },
+  subHeader: {
+    textTransform: "uppercase",
+    marginTo: "0",
+  },
+  divider: {
+    maxWidth: "3.25rem",
+    borderColor: "#f4623a"
   },
   title: {
     ...title,

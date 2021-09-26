@@ -13,6 +13,9 @@ const teamStyle = {
     minHeight: "32px",
     textDecoration: "none",
   },
+  services: {
+    marginTop: "40px",
+  },
   ...imagesStyle,
   itemGrid: {
     marginLeft: "auto",
