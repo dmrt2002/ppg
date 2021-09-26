@@ -37,7 +37,6 @@ react-slick                                0.26.1   →    0.28.1
 eslint-config-prettier                     6.11.0   →     8.3.0
 eslint-plugin-prettier                      3.1.3   →     3.4.0
 eslint-plugin-react                        7.20.0   →    7.23.2
-gulp-append-prepend                         1.0.8   →     1.0.9
 prettier                                    2.0.5   →     2.3.0
 typescript                                  3.9.3   →     4.2.4
 ```
@@ -98,8 +97,6 @@ _Warnings might appear while doing an npm install - they do not affect the UI or
 ### Added components
 ### Deleted dependencies
 ### Added dependencies
-+ gulp@4.0.2
-+ gulp-append-prepend@1.0.8
 ### Updated dependencies
 ```
 @material-ui/core                          4.1.0   →    4.3.2
