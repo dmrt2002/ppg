@@ -1,6 +1,6 @@
-import firebase from "firebase";
+import { initializeApp } from 'firebase/app';
 
-export default firebase.initializeApp({
+export default initializeApp({
   apiKey: "AIzaSyAhbhz0o76LrVR0heh9AczAU-L3-SUh-v8",
   authDomain: "ppgtouristhome-8c400.firebaseapp.com",
   projectId: "ppgtouristhome-8c400",
