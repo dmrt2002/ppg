@@ -5,7 +5,7 @@ import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
 
 // @material-ui/icons
-
+import { getBookings } from "firestore.js";
 // core components
 import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
@@ -24,7 +24,7 @@ import WorkSection from "./Sections/WorkSection.js";
 import SectionCarousel from "./Sections/SectionCarousel.js";
 
 const dashboardRoutes = [];
-
+getBookings();
 const useStyles = makeStyles(styles);
 
 import banner from "assets/img/ppg-banner.png";
