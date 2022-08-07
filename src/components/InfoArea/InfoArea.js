@@ -22,9 +22,12 @@ export default function InfoArea(props) {
     [classes.icon]: true,
     [classes.iconVertical]: vertical,
   });
+  const handleUrl = () => {
+    if (props.actionUrl) window.open(props.actionUrl, "_blank")
+  }
   return (
     <div className={classes.infoArea}>
-      <div className={iconWrapper}>
+      <div className={iconWrapper} onClick={handleUrl}>
         <props.icon className={iconClasses} />
       </div>
       <div className={classes.descriptionWrapper}>

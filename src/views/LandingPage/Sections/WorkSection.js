@@ -3,6 +3,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
 // @material-ui/icons
+import { Phone, Email, WhatsApp } from "@material-ui/icons";
 
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
@@ -11,6 +12,7 @@ import CustomInput from "components/CustomInput/CustomInput.js";
 import Button from "components/CustomButtons/Button.js";
 
 import styles from "assets/jss/material-kit-react/views/landingPageSections/workStyle.js";
+import InfoArea from "components/InfoArea/InfoArea";
 
 const useStyles = makeStyles(styles);
 
@@ -20,47 +22,37 @@ export default function WorkSection() {
     <div className={classes.section}>
       <GridContainer justify="center">
         <GridItem cs={12} sm={12} md={8}>
-          <h2 className={classes.title}>Work with us</h2>
+          <h2 className={classes.title}>Contact us</h2>
           <h4 className={classes.description}>
-            Divide details about your product or agency work into parts. Write a
-            few lines about each one and contact us about any further
-            collaboration. We will responde get back to you in a couple of
-            hours.
+            You can contact us by the following ways.
           </h4>
           <form>
             <GridContainer>
-              <GridItem xs={12} sm={12} md={6}>
-                <CustomInput
-                  labelText="Your Name"
-                  id="name"
-                  formControlProps={{
-                    fullWidth: true,
-                  }}
-                />
-              </GridItem>
-              <GridItem xs={12} sm={12} md={6}>
-                <CustomInput
-                  labelText="Your Email"
-                  id="email"
-                  formControlProps={{
-                    fullWidth: true,
-                  }}
-                />
-              </GridItem>
-              <CustomInput
-                labelText="Your Message"
-                id="message"
-                formControlProps={{
-                  fullWidth: true,
-                  className: classes.textArea,
-                }}
-                inputProps={{
-                  multiline: true,
-                  rows: 5,
-                }}
-              />
               <GridItem xs={12} sm={12} md={4}>
-                <Button color="primary">Send Message</Button>
+                <InfoArea
+                  description="Click on the icon to chat with us on whatsapp"
+                  actionUrl="https://wa.me/917012622260"
+                  icon={WhatsApp}
+                  iconColor="primary"
+                  vertical
+                />
+              </GridItem>
+              <GridItem xs={12} sm={12} md={4}>
+                <InfoArea
+                  description="Call us on +91 04842711898, +91 9387262354"
+                  icon={Phone}
+                  iconColor="primary"
+                  vertical
+                />
+              </GridItem>
+              <GridItem xs={12} sm={12} md={4}>
+                <InfoArea
+                  description="Write to us at ppgtouristhome2015@gmail.com"
+                  icon={Email}
+                  actionUrl="mailto:ppgtouristhome2015@gmail.com"
+                  iconColor="primary"
+                  vertical
+                />
               </GridItem>
             </GridContainer>
           </form>
