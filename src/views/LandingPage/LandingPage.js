@@ -28,6 +28,7 @@ getBookings();
 const useStyles = makeStyles(styles);
 
 import banner from "assets/img/ppg-banner.png";
+import { Link } from "react-router-dom";
 
 export default function LandingPage(props) {
   const classes = useStyles();
@@ -60,16 +61,17 @@ export default function LandingPage(props) {
                 Book your rooms now so that you have a hassle free living experience while visiting Chottanikara, Kochi!
               </h3>
               <br />
+              <Link to="/book">
               <Button
                 color="primary"
                 size="lg"
-                href="/book"
                 target="_blank"
                 rel="noopener noreferrer"
                 round
               >
                 Book Now
               </Button>
+              </Link>
             </GridItem>
           </GridContainer>
         </div>

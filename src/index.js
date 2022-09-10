@@ -10,13 +10,13 @@ import Components from "views/Components/Components.js";
 import ProfilePage from "views/ProfilePage/ProfilePage.js";
 import LoginPage from "views/LoginPage/LoginPage.js";
 import Home from "views/LandingPage/LandingPage.js";
-
+import BookingPage from "views/BookingPage/BookingPage"
 var hist = createBrowserHistory();
 
 ReactDOM.render(
   <Router history={hist}>
     <Switch>
-      <Route path="/profile-page" component={ProfilePage} />
+      <Route path="/book" component={BookingPage} />
       <Route path="/login-page" component={LoginPage} />
       <Route path="/components" component={Components} />
       <Route path="/" component={Home} />
