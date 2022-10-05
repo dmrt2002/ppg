@@ -3,7 +3,12 @@ import { container, title } from "assets/jss/material-kit-react.js";
 import imagesStyle from "assets/jss/material-kit-react/imagesStyles.js";
 
 const profilePageStyle = {
-  container,
+  container: {
+    zIndex: "12",
+    color: "#FFFFFF",
+    textAlign: "center",
+    ...container
+  },
   profile: {
     textAlign: "center",
     "& img": {
@@ -57,6 +62,12 @@ const profilePageStyle = {
     margin: "20px auto 50px auto",
     textAlign: "center",
   },
+  cardSize: {
+    height: "300px"
+  },
+  date: {
+    marginBottom: "8vh",
+  }
 };
 
 export default profilePageStyle;
