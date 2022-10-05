@@ -16,8 +16,6 @@ import GridItem from "components/Grid/GridItem.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import NavPills from "components/NavPills/NavPills.js";
 import Parallax from "components/Parallax/Parallax.js";
-import banner from "assets/img/ppg-banner.png";
-import FormControl from "@material-ui/core/FormControl";
 
 import profile from "assets/img/faces/christian.jpg";
 
@@ -32,8 +30,6 @@ import work3 from "assets/img/examples/cynthia-del-rio.jpg";
 import work4 from "assets/img/examples/mariya-georgieva.jpg";
 import work5 from "assets/img/examples/clem-onojegaw.jpg";
 
-import Datetime from "react-datetime";
-
 import styles from "assets/jss/material-kit-react/views/profilePage.js";
 import Card from "components/Card/Card";
 import CardHeader from "components/Card/CardHeader";
@@ -45,18 +41,7 @@ const useStyles = makeStyles(styles);
 
 export default function ProfilePage(props) {
   const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
-  const [name, setName] = React.useState("")
-  const [email, setEmail] = React.useState("")
-  const [phoneNumber, setPhoneNumber] = React.useState("")
-  const [startDate, setStartDate] = React.useState(new Date())
-  const [endDate , setEndDate] = React.useState(new Date())
   const classes = useStyles();
-  const imageClassesBanner = classNames(
-    classes.imgFluid
-  );
-  const submit = () => {
-    console.log(startDate)
-  }
   const { ...rest } = props;
   const imageClasses = classNames(
     classes.imgRaised,
@@ -80,22 +65,14 @@ export default function ProfilePage(props) {
       <Parallax
         small
         filter
-        image={require("assets/img/bg.jpg").default}
-      >
-        <div className={classes.container}>
-          <GridContainer>
-            <GridItem xs={12} sm={12} md={12}>
-              <img src={banner} alt="..." className={imageClassesBanner} />
-            </GridItem>
-          </GridContainer>
-        </div>
-        </Parallax>
+        image={require("assets/img/profile-bg.jpg").default}
+      />
       <div >
         <div>
           <div className={classes.container}>
             <GridContainer justify="center">
             <GridItem xs={6} sm={6} md={6}>
-              <Card className={classes.cardSize}>
+              <Card className={classes[cardAnimaton]}>
                 <form className={classes.form}>
                   <CardBody>
                     <CustomInput
@@ -107,8 +84,6 @@ export default function ProfilePage(props) {
                       inputProps={{
                         type: "text",
                       }}
-                      value={name}
-                      onChange={e => setName(e.target.value)}
                     />
                     <CustomInput
                       labelText="Email..."
@@ -119,8 +94,6 @@ export default function ProfilePage(props) {
                       inputProps={{
                         type: "email",
                       }}
-                      value={email}
-                      onChange={e => setEmail(e.target.value)}
                     />
                     <CustomInput
                       labelText="Phone..."
@@ -131,38 +104,56 @@ export default function ProfilePage(props) {
                       inputProps={{
                         type: "tel",
                       }}
-                      value={phoneNumber}
-                      onChange={e => setPhoneNumber(e.target.value)}
                     />
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
+                    <Button simple color="primary" size="lg">
+                      Get started
+                    </Button>
                   </CardFooter>
                 </form>
               </Card>
               </GridItem>
               <GridItem xs={6} sm={6} md={6}>
-              <Card className={classes.cardSize}>
+              <Card className={classes[cardAnimaton]}>
                 <form className={classes.form}>
                   {/* <CardHeader color="primary" className={classes.cardHeader}>
                     <h4>Login</h4>
                   </CardHeader> */}
                   <CardBody>
-                  <FormControl fullWidth>
-                    <Datetime
-                      className={classes.date}
-                      inputProps={{ placeholder: "Start Date" }}
-                      onChange={date => setStartDate(date)}
+                    <CustomInput
+                      labelText="Full Name..."
+                      id="first"
+                      formControlProps={{
+                        fullWidth: true,
+                      }}
+                      inputProps={{
+                        type: "text",
+                      }}
                     />
-                  </FormControl>
-                  <FormControl fullWidth>
-                    <Datetime
-                      inputProps={{ placeholder: "End Date" }}
-                      onChange={date => setEndDate(date)}
+                    <CustomInput
+                      labelText="Email..."
+                      id="email"
+                      formControlProps={{
+                        fullWidth: true,
+                      }}
+                      inputProps={{
+                        type: "email",
+                      }}
                     />
-                  </FormControl>
+                    <CustomInput
+                      labelText="Phone..."
+                      id="phone"
+                      formControlProps={{
+                        fullWidth: true,
+                      }}
+                      inputProps={{
+                        type: "tel",
+                      }}
+                    />
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
-                    <Button onClick={submit} simple color="primary" size="lg">
+                    <Button simple color="primary" size="lg">
                       Get started
                     </Button>
                   </CardFooter>
